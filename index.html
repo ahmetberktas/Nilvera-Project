@@ -219,22 +219,26 @@
         class="p-3 rounded-lg dark:border-gray-700 mt-14 flex flex-col lg:flex-row bg-gray-800"
       >
         <!-- Arama ve Tarih Seçimi Alanı -->
-        <div class="w-full lg:w-1/2 text-white flex items-center space-x-2">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Ara..."
-            class="flex-grow p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-blue-500 focus:border-blue-500"
-            oninput="toggleClearButton()"
-          />
-          <button
-            id="clear-search"
-            class="hidden flex items-center justify-center w-10 h-10 rounded-lg bg-gray-600 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onclick="clearInputs()"
-          >
-            <i class="fa-solid fa-trash"></i>
-          </button>
-          <div class="relative">
+        <div
+          class="w-full lg:w-1/2 text-white flex flex-col lg:flex-row items-center lg:space-x-2"
+        >
+          <div class="relative flex w-full">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Ara..."
+              class="flex-grow p-2 pr-10 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-blue-500 focus:border-blue-500"
+              oninput="toggleClearButton()"
+            />
+            <button
+              id="clear-search"
+              class="hidden absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-lg"
+              onclick="clearInputs()"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="relative w-full mt-2 lg:mt-0">
             <div
               class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
             >
