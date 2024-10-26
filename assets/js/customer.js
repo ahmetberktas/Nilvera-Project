@@ -443,7 +443,7 @@ function handleEditClick(button) {
         showToast("Müşteri bilgileri başarıyla güncellendi.", "success");
         fetchCustomerData();
         closeDrawer();
-        productForm.reset();
+        this.reset();
       })
       .catch((error) => {
         showToast(
