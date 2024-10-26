@@ -329,6 +329,7 @@ document.getElementById("search-button").addEventListener("click", function () {
   fetchData();
 });
 
+/* Arama Input Clear */
 function clearInputs() {
   document.getElementById("search-input").value = "";
 
@@ -347,8 +348,36 @@ function toggleClearButton() {
   }
 }
 
+/* Tarih Alanı Clear */
+function clearDate() {
+  const dateInput = document.getElementById("datepicker-autohide");
+  dateInput.value = "";
+  toggleClearButton();
+}
+
+function toggleClearButton() {
+  const dateInput = document.getElementById("datepicker-autohide");
+  const clearButton = document.getElementById("clear-date");
+
+  /* Tarih alanı doluysa button göster */
+  if (dateInput.value) {
+    clearButton.classList.remove("hidden");
+  } else {
+    clearButton.classList.add("hidden");
+  }
+}
+
 // Sayfa yüklendiğinde verileri getir
-document.addEventListener("DOMContentLoaded", fetchData);
+document.addEventListener("DOMContentLoaded", function () {
+  fetchData();
+
+  // Tarih giriş alanı için dinleyicileri
+  const dateInput = document.getElementById("datepicker-autohide");
+  dateInput.addEventListener("input", toggleClearButton);
+  dateInput.addEventListener("change", toggleClearButton);
+
+  dateInput.addEventListener("blur", toggleClearButton);
+});
 
 // Geri ve ileri butonları için olay dinleyicileri
 document.getElementById("prev").addEventListener("click", function () {
