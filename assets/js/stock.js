@@ -352,10 +352,10 @@ function toggleClearButton() {
 function clearDate() {
   const dateInput = document.getElementById("datepicker-autohide");
   dateInput.value = "";
-  toggleClearButton();
+  toogleDateClearButton();
 }
 
-function toggleClearButton() {
+function toogleDateClearButton() {
   const dateInput = document.getElementById("datepicker-autohide");
   const clearButton = document.getElementById("clear-date");
 
@@ -373,10 +373,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Tarih giriş alanı için dinleyicileri
   const dateInput = document.getElementById("datepicker-autohide");
-  dateInput.addEventListener("input", toggleClearButton);
-  dateInput.addEventListener("change", toggleClearButton);
+  dateInput.addEventListener("input", toogleDateClearButton);
+  dateInput.addEventListener("change", toogleDateClearButton);
 
-  dateInput.addEventListener("blur", toggleClearButton);
+  dateInput.addEventListener("blur", toogleDateClearButton);
 });
 
 // Geri ve ileri butonları için olay dinleyicileri
